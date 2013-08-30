@@ -16,10 +16,10 @@ class CPUCoresCounter(object):
             cls.platform = force_platform
         else:
             cls.platform = sys.platform
-        if cls.platform == 'darwin':
+        if cls.platform.startswith('darwin'):
             from cpu_cores.darwin import DarwinCPUCoresCounter
             return DarwinCPUCoresCounter()
-        elif cls.platform == 'linux':
+        elif cls.platform.startswith('linux'):
             from cpu_cores.linux import LinuxCPUCoresCounter
             return LinuxCPUCoresCounter()
         else:

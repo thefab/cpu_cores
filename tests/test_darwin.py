@@ -1,8 +1,13 @@
 import unittest
+import os
+
 from cpu_cores import CPUCoresCounter
 
 
 class TestCPUCores(unittest.TestCase):
+
+    def _dir(self):
+        return os.path.dirname(__file__)
 
     def test_factory_darwin(self):
         x = CPUCoresCounter.factory(force_platform='darwin')
@@ -19,7 +24,7 @@ class TestCPUCores(unittest.TestCase):
 
     def test_darwin_count1(self):
         x = self._test_darwin_count()
-        x._count('cat darwin1')
+        x._count('cat %s/darwin1' % self._dir())
         self.assertEqual(x._physical_cores_count, 2)
         self.assertEqual(x._physical_processors_count, 1)
 
