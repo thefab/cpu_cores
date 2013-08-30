@@ -49,6 +49,6 @@ class LinuxCPUCoresCounter(CPUCoresCounter):
         self._physical_processors_count = len(processors)
 
     def _check_counting_or_do_it(self):
-        if self.physical_processors_count is None or \
-                self.physical_cores_count is None:
+        if self._physical_processors_count is None or \
+                self._physical_cores_count is None:
             self._count(CPUINFO_FILEPATH)
