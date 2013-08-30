@@ -4,6 +4,11 @@ import sys
 class CPUCoresCounter(object):
 
     platform = None
+    _physical_cores_count = None
+    _physical_processors_count = None
+
+    def _count(self, *args, **kwargs):
+        raise NotImplemented()
 
     @classmethod
     def factory(cls, force_platform=None):
@@ -20,8 +25,10 @@ class CPUCoresCounter(object):
         else:
             raise NotImplemented("unsupported platform type [%s]" % cls.platform)
 
-    def get_physical_cores_count(self):
-        raise NotImplemented()
-
     def get_physical_processors_count(self):
-        raise NotImplemented()
+        self._check_counting_or_do_it()
+        return self._physical_processors_count
+
+    def get_physical_cores_count(self):
+        self._check_counting_or_do_it()
+        return self._physical_cores_count

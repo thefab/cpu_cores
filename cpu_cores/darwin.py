@@ -8,9 +8,6 @@ CPUINFO_COMMAND = "/usr/sbin/system_profiler -detailLevel full SPHardwareDataTyp
 
 class DarwinCPUCoresCounter(CPUCoresCounter):
 
-    _physical_cores_count = None
-    _physical_processors_count = None
-
     def _count(self, command):
         s = subprocess.Popen(shlex.split(command),
                              stdout=subprocess.PIPE,
@@ -35,11 +32,3 @@ class DarwinCPUCoresCounter(CPUCoresCounter):
         if self._physical_processors_count is None or \
                 self._physical_cores_count is None:
             self._count(CPUINFO_COMMAND)
-
-    def get_physical_processors_count(self):
-        self._check_counting_or_do_it()
-        return self._physical_processors_count
-
-    def get_physical_cores_count(self):
-        self._check_counting_or_do_it()
-        return self._physical_cores_count
