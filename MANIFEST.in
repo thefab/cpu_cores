@@ -1,0 +1,7 @@
+include .gitignore
+include LICENSE
+include README.md
+include Makefile
+include scripts/get_cpu_physical_cores.py
+recursive-include tests *
+recursive-include cpu_cores *

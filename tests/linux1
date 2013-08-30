@@ -1,0 +1,92 @@
+processor : 0
+vendor_id : GenuineIntel
+cpu family : 6
+model : 7
+model name : Intel(R) Xeon(R) CPU L5240 @ 3.00GHz
+stepping : 6
+cpu MHz : 3000.011
+cache size : 6144 KB
+physical id : 0
+siblings : 2
+core id : 0
+cpu cores : 2
+fpu : yes
+fpu_exception : yes
+cpuid level : 10
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm syscall lm pni monitor ds_cpl est tm2 cx16 xtpr
+bogomips : 6004.01
+clflush size : 64
+cache_alignment : 64
+address sizes : 38 bits physical, 48 bits virtual
+power management:
+
+processor : 1
+vendor_id : GenuineIntel
+cpu family : 6
+model : 7
+model name : Intel(R) Xeon(R) CPU L5240 @ 3.00GHz
+stepping : 6
+cpu MHz : 3000.011
+cache size : 6144 KB
+physical id : 3
+siblings : 2
+core id : 6
+cpu cores : 2
+fpu : yes
+fpu_exception : yes
+cpuid level : 10
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm syscall lm pni monitor ds_cpl est tm2 cx16 xtpr
+bogomips : 6000.05
+clflush size : 64
+cache_alignment : 64
+address sizes : 38 bits physical, 48 bits virtual
+power management:
+
+processor : 2
+vendor_id : GenuineIntel
+cpu family : 6
+model : 7
+model name : Intel(R) Xeon(R) CPU L5240 @ 3.00GHz
+stepping : 6
+cpu MHz : 3000.011
+cache size : 6144 KB
+physical id : 0
+siblings : 2
+core id : 1
+cpu cores : 2
+fpu : yes
+fpu_exception : yes
+cpuid level : 10
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm syscall lm pni monitor ds_cpl est tm2 cx16 xtpr
+bogomips : 5999.97
+clflush size : 64
+cache_alignment : 64
+address sizes : 38 bits physical, 48 bits virtual
+power management:
+
+processor : 3
+vendor_id : GenuineIntel
+cpu family : 6
+model : 7
+model name : Intel(R) Xeon(R) CPU L5240 @ 3.00GHz
+stepping : 6
+cpu MHz : 3000.011
+cache size : 6144 KB
+physical id : 3
+siblings : 2
+core id : 7
+cpu cores : 2
+fpu : yes
+fpu_exception : yes
+cpuid level : 10
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm syscall lm pni monitor ds_cpl est tm2 cx16 xtpr
+bogomips : 6000.02
+clflush size : 64
+cache_alignment : 64
+address sizes : 38 bits physical, 48 bits virtual
+power management:
+
