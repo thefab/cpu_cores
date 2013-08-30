@@ -19,7 +19,7 @@ class DarwinCPUCoresCounter(CPUCoresCounter):
             if len(err.strip()) > 0 or len(out.strip()) == 0:
                 raise Exception('impossible to get the cpu cores count (darwin)' + \
                                 ' (error message = %s)' % err.strip())
-            lines = out.split('\n')
+            lines = out.split(b'\n')
             for line in lines:
                 tmp = line.strip()
                 if tmp.startswith('Total Number of Cores:'):
