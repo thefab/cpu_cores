@@ -13,9 +13,9 @@ On Linux, this is not an easy task because of hyperthreaded logical cores includ
 ## Special features
 
 - support Linux (well tested) and OSX (needs some extra tests files), easy to extend to support other OS
-- unit tests
+- unit tests (> 90% coverage)
 - python2 and python3 support
-- no other dependencies
+- no dependencies
 
 ## Warning
 

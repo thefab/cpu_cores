@@ -10,6 +10,19 @@ class TestCommon(unittest.TestCase):
         self.assertTrue(x.platform is not None)
         self.assertTrue(len(x.platform) > 0)
 
+    def _test_unkwown_platform(self):
+        CPUCoresCounter.factory(force_platform='unknown')
+
+    def _test_bad_call(self):
+        x = CPUCoresCounter()
+        x._count()
+
+    def test_unknown_platform(self):
+        self.assertRaises(NotImplementedError, self._test_unkwown_platform)
+
+    def test_bad_call(self):
+        self.assertRaises(NotImplementedError, self._test_bad_call)
+
     def _test_get_common(self):
         x = CPUCoresCounter.factory()
         self.assertTrue(x is not None)

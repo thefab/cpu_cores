@@ -26,7 +26,9 @@ def _processor_hash(cpu_infos):
 
 class LinuxCPUCoresCounter(CPUCoresCounter):
 
-    def _count(self, cpuinfo_filepath):
+    def _count(self, cpuinfo_filepath=None):
+        if cpuinfo_filepath is None:
+            cpuinfo_filepath = CPUINFO_FILEPATH
         with open(cpuinfo_filepath, 'r') as f:
             # we read lines in reversed order to be sure to end with a
             # "processor:" line
@@ -47,8 +49,3 @@ class LinuxCPUCoresCounter(CPUCoresCounter):
                 raise Exception("can't get the cpu cores count (linux)")
         self._physical_cores_count = len(cores)
         self._physical_processors_count = len(processors)
-
-    def _check_counting_or_do_it(self):
-        if self._physical_processors_count is None or \
-                self._physical_cores_count is None:
-            self._count(CPUINFO_FILEPATH)

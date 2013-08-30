@@ -25,10 +25,15 @@ class CPUCoresCounter(object):
         else:
             raise NotImplementedError("unsupported platform type [%s]" % cls.platform)
 
-    def get_physical_processors_count(self):
-        self._check_counting_or_do_it()
-        return self._physical_processors_count
+    def _check_counting_or_do_it(self):
+        if self._physical_processors_count is None or \
+                self._physical_cores_count is None:
+            self._count()
 
     def get_physical_cores_count(self):
         self._check_counting_or_do_it()
         return self._physical_cores_count
+
+    def get_physical_processors_count(self):
+        self._check_counting_or_do_it()
+        return self._physical_processors_count
