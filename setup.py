@@ -16,7 +16,7 @@ except IOError:
 
 with open('pip-requirements.txt') as reqs:
     install_requires = [
-        line for line in reqs.read().split(b'\n') if (line and not
+        line for line in reqs.read().split('\n') if (line and not
                                                      line.startswith('--'))]
 
 setup(
