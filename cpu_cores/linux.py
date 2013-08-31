@@ -1,3 +1,6 @@
+# This file is part of cpu_cores released under the MIT license.
+# See the LICENSE file for more information.
+
 from cpu_cores.common import CPUCoresCounter
 
 CPUINFO_FILEPATH = "/proc/cpuinfo"
@@ -7,7 +10,7 @@ def _core_hash(cpu_infos):
     if 'core id' not in cpu_infos and 'physical id' not in cpu_infos:
         return "%i" % cpu_infos['processor']
     if 'core id' in cpu_infos and 'physical id' not in cpu_infos:
-        raise Exception("incorrect cpuinfo file :" +\
+        raise Exception("incorrect cpuinfo file :"
                         " we have a core_id without physical_id")
     if 'core id' in cpu_infos:
         return "%i_%i" % (cpu_infos['physical id'], cpu_infos['core id'])
@@ -19,7 +22,7 @@ def _processor_hash(cpu_infos):
     if 'core id' not in cpu_infos and 'physical id' not in cpu_infos:
         return "%i" % cpu_infos['processor']
     if 'core id' in cpu_infos and 'physical id' not in cpu_infos:
-        raise Exception("incorrect cpuinfo file :" +\
+        raise Exception("incorrect cpuinfo file :"
                         " we have a core_id without physical_id")
     return "%i" % cpu_infos['physical id']
 

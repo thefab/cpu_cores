@@ -1,3 +1,6 @@
+# This file is part of cpu_cores released under the MIT license.
+# See the LICENSE file for more information.
+
 import sys
 
 
@@ -23,7 +26,8 @@ class CPUCoresCounter(object):
             from cpu_cores.linux import LinuxCPUCoresCounter
             return LinuxCPUCoresCounter()
         else:
-            raise NotImplementedError("unsupported platform type [%s]" % cls.platform)
+            raise NotImplementedError("unsupported platform type [%s]" %
+                                      cls.platform)
 
     def _check_counting_or_do_it(self):
         if self._physical_processors_count is None or \

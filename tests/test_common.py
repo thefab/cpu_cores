@@ -1,3 +1,6 @@
+# This file is part of cpu_cores released under the MIT license.
+# See the LICENSE file for more information.
+
 import unittest
 from cpu_cores import CPUCoresCounter
 

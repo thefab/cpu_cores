@@ -1,9 +1,13 @@
+# This file is part of cpu_cores released under the MIT license.
+# See the LICENSE file for more information.
+
 import shlex
 import subprocess
 
 from cpu_cores.common import CPUCoresCounter
 
-CPUINFO_COMMAND = "/usr/sbin/system_profiler -detailLevel full SPHardwareDataType"
+CPUINFO_COMMAND = "/usr/sbin/system_profiler" \
+                  " -detailLevel full SPHardwareDataType"
 
 
 class DarwinCPUCoresCounter(CPUCoresCounter):
@@ -17,8 +21,8 @@ class DarwinCPUCoresCounter(CPUCoresCounter):
         if s:
             out, err = s.communicate()
             if len(err.strip()) > 0 or len(out.strip()) == 0:
-                raise Exception('impossible to get the cpu cores count (darwin)' + \
-                                ' (error message = %s)' % err.strip())
+                raise Exception('impossible to get the cpu cores count' +
+                                '(darwin) (error message = %s)' % err.strip())
             lines = out.split(b'\n')
             for line in lines:
                 tmp = line.strip()
