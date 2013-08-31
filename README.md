@@ -61,6 +61,14 @@ If you have exotic Linux or OSX boxes with plenty of cpu cores, please provides 
 ### As a CLI utility
 
     prompt$ get_cpu_physical_cores.py
-
     Number of real physical processors : 1
     Number of real physical cores      : 2
+
+
+    prompt$ get_cpu_physical_cores.py --single-value=cores
+    2
+
+
+    prompt$ get_cpu_physical_cores.py --single-value=processors
+    1
+
