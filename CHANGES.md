@@ -1,5 +1,9 @@
 # CHANGES
 
+## Release 0.1.3 (alpha)
+
+- fix another problem with PyPi
+
 ## Release 0.1.2 (alpha)
 
 - another release on PyPi to be coherent with git tags
