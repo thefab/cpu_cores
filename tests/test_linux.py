@@ -24,19 +24,19 @@ class TestLinux(unittest.TestCase):
 
     def test_linux_count1(self):
         x = self._test_linux_count()
-        x._count('%s/linux1' % self._dir())
+        x._count(os.path.join(self._dir(), 'linux1'))
         self.assertEqual(x._physical_cores_count, 4)
         self.assertEqual(x._physical_processors_count, 2)
 
     def test_linux_count2(self):
         x = self._test_linux_count()
-        x._count('%s/linux2' % self._dir())
+        x._count(os.path.join(self._dir(), 'linux2'))
         self.assertEqual(x._physical_cores_count, 1)
         self.assertEqual(x._physical_processors_count, 1)
 
     def test_linux_count3(self):
         x = self._test_linux_count()
-        x._count('%s/linux3' % self._dir())
+        x._count(os.path.join(self._dir(), 'linux3'))
         self.assertEqual(x._physical_cores_count, 8)
         self.assertEqual(x._physical_processors_count, 2)
 

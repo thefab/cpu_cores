@@ -24,7 +24,7 @@ class TestCPUCores(unittest.TestCase):
 
     def test_darwin_count1(self):
         x = self._test_darwin_count()
-        x._count('cat %s/darwin1' % self._dir())
+        x._count('cat %s' % os.path.join(self._dir(), 'darwin1'))
         self.assertEqual(x._physical_cores_count, 2)
         self.assertEqual(x._physical_processors_count, 1)
 

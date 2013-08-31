@@ -22,10 +22,10 @@ class DarwinCPUCoresCounter(CPUCoresCounter):
             lines = out.split(b'\n')
             for line in lines:
                 tmp = line.strip()
-                if tmp.startswith('Total Number of Cores:'):
-                    self._physical_cores_count = int(tmp.split(':')[1])
-                if tmp.startswith('Number of Processors:'):
-                    self._physical_processors_count = int(tmp.split(':')[1])
+                if tmp.startswith(b'Total Number of Cores:'):
+                    self._physical_cores_count = int(tmp.split(b':')[1])
+                if tmp.startswith(b'Number of Processors:'):
+                    self._physical_processors_count = int(tmp.split(b':')[1])
         if self._physical_processors_count is None or \
                 self._physical_cores_count is None:
             raise Exception('impossible to get the cpu cores count (darwin)')
