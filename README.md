@@ -38,7 +38,7 @@ If you have exotic Linux or OSX boxes with plenty of cpu cores, please provides 
     pip install cpu_cores
 
     Requirements: 
-    - Python 2.5, 2.6, 2.7, 3.2 or 3.3
+    - Python 2.6, 2.7, 3.2 or 3.3
 
 ## Two ways to use it
 
