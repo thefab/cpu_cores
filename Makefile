@@ -33,3 +33,6 @@ coverage:
 	cd tests && coverage run `which nosetests` && coverage html --include='*/cpu_cores/*' --omit='test_*'
 
 release: test coverage clean upload clean 
+
+flake8:
+	find . -name "*.py" -exec flake8 {} \;
