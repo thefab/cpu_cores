@@ -31,6 +31,11 @@ class TestCPUCores(unittest.TestCase):
         self.assertEqual(x._physical_cores_count, 2)
         self.assertEqual(x._physical_processors_count, 1)
 
+    def test_darwin_count2(self):
+        x = self._test_darwin_count()
+        x._count('cat %s' % os.path.join(self._dir(), 'darwin2'))
+        self.assertEqual(x._physical_cores_count, 10)
+        self.assertEqual(x._physical_processors_count, 1)
 
 if __name__ == '__main__':
     unittest.main()
