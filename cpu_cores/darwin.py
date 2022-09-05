@@ -27,9 +27,12 @@ class DarwinCPUCoresCounter(CPUCoresCounter):
             for line in lines:
                 tmp = line.strip()
                 if tmp.startswith(b'Total Number of Cores:'):
-                    self._physical_cores_count = int(tmp.split(b':')[1])
+                    self._physical_cores_count = int(tmp.split(b':')[1].decode('utf-8').split('(')[0].replace(' ',''))
                 if tmp.startswith(b'Number of Processors:'):
                     self._physical_processors_count = int(tmp.split(b':')[1])
+                if tmp.startswith(b'Chip:'):
+                    if b"Apple M" in tmp:
+                        self._physical_processors_count = 1
         if self._physical_processors_count is None or \
                 self._physical_cores_count is None:
             raise Exception('impossible to get the cpu cores count (darwin)')
